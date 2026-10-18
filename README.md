@@ -1,4 +1,3 @@
-# DATA_ML
-Data ML workbook
+# DATA SCIENCE & MACHINE LEARNING WORKBOOK
 
 Programming Language: R
