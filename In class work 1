@@ -1,0 +1,417 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "kernelspec": {
+      "name": "ir",
+      "display_name": "R",
+      "language": "R"
+    },
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/6caau/DATA-ML-Workbook/blob/main/In%20class%20work%201\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "R is a proramming language and so has variables. Variables can hold data, and can be use in calculations and in program logic.\n",
+        "\n",
+        "Save your work Colab to your Google Drive. Please do not directly open a New Colab Notebook. Shift Enter"
+      ],
+      "metadata": {
+        "id": "GNOoySuGPiPc"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Calculation**\n",
+        "\n",
+        "R performs addition, subtraction, multiplication, and divisin with +, -, * and /"
+      ],
+      "metadata": {
+        "id": "YaQdl6xI0Ebk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "## Calculation\n",
+        "564 - 65 + 1\n",
+        "\n",
+        "20 * 3\n",
+        "\n",
+        "20/5\n",
+        "\n",
+        "25 * 4 + 12/3"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 86
+        },
+        "id": "Bd11IILA0CsN",
+        "outputId": "a674642a-30e8-4d2c-b49a-43d56eac07bb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "500"
+            ],
+            "text/markdown": "500",
+            "text/latex": "500",
+            "text/plain": [
+              "[1] 500"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "60"
+            ],
+            "text/markdown": "60",
+            "text/latex": "60",
+            "text/plain": [
+              "[1] 60"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "4"
+            ],
+            "text/markdown": "4",
+            "text/latex": "4",
+            "text/plain": [
+              "[1] 4"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "104"
+            ],
+            "text/markdown": "104",
+            "text/latex": "104",
+            "text/plain": [
+              "[1] 104"
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Data Types**\n",
+        "In R and in programing, data types are the classifications we give different kinds of information pieces. R data types:\n",
+        "\n",
+        "1. Numeric: Any number with or without a decimal point, 23, 0.03 and a number null value NA\n",
+        "2. Character: Any groupding of characters on your keyboard (letters, numbers, spaces, symbols, etc) or text. Most strings are surrounded by sing quotes '...' or double quotes \"...\" sometimes you will hear this type referred to as \"string\"\n",
+        "3. Logical: This data type only has two possible values-either TRUE or FALSE (without quotes). It is helpful to think of logical types or booleans as on and off, yes or no question.\n",
+        "4. Vectors: A list of related data that is all the same type\n",
+        "5. NA: This data type represents the absence of a value, an is represented by the keyword NA (without quotes) but it has its own significance in the content of different types. There is numeric NA, a character NA, a logical NA."
+      ],
+      "metadata": {
+        "id": "WeHzaOnX1yBH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class(2) ##numeric\n",
+        "class('hello') ## character\n",
+        "class('23') ## character\n",
+        "class(FALSE) ## logical\n",
+        "class(NA) ## logical"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 104
+        },
+        "id": "LFfOJOzq4Au5",
+        "outputId": "54112bf8-d33d-45d5-9ef4-8cb2cdadd797"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "'numeric'"
+            ],
+            "text/markdown": "'numeric'",
+            "text/latex": "'numeric'",
+            "text/plain": [
+              "[1] \"numeric\""
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "'character'"
+            ],
+            "text/markdown": "'character'",
+            "text/latex": "'character'",
+            "text/plain": [
+              "[1] \"character\""
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "'character'"
+            ],
+            "text/markdown": "'character'",
+            "text/latex": "'character'",
+            "text/plain": [
+              "[1] \"character\""
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "'logical'"
+            ],
+            "text/markdown": "'logical'",
+            "text/latex": "'logical'",
+            "text/plain": [
+              "[1] \"logical\""
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "'logical'"
+            ],
+            "text/markdown": "'logical'",
+            "text/latex": "'logical'",
+            "text/plain": [
+              "[1] \"logical\""
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Variables**\n",
+        "\n",
+        "A name that stores a value. Once a value is stored, you can use the name instead of typing the value again.\n",
+        "\n",
+        "You need to use <- to assign a value, using an arrow to assign a value to a variable\n",
+        "\n",
+        "Variables can't have spaces or symbols in their names other than an underscore (_). They can't begin with numbers but they can have numbers after the first letter (cool_variable_5 is ok)."
+      ],
+      "metadata": {
+        "id": "Gg9fqPVb5Ej9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "course_name <- \"MA322\"\n",
+        "course_name\n",
+        "print(course_name)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 52
+        },
+        "id": "J1PGsiLo4fIG",
+        "outputId": "734105ac-5dd6-4272-c6d7-66e5bd69e049"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "'MA322'"
+            ],
+            "text/markdown": "'MA322'",
+            "text/latex": "'MA322'",
+            "text/plain": [
+              "[1] \"MA322\""
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] \"MA322\"\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "## Greeting\n",
+        "message_string <- \"Hello all\"\n",
+        "print(message_string)\n",
+        "\n",
+        "## Farewell\n",
+        "message_string <- \"See you\"\n",
+        "print(message_string)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lYPo1V0H7JOv",
+        "outputId": "121df472-bd98-4d95-e763-51047b8c37a6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] \"Hello all\"\n",
+            "[1] \"See you\"\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "## Variable Exercise\n",
+        "full_name <- \"Cindy Nguyen\"\n",
+        "major <- \"FBM\"\n",
+        "class  <- \"2028\"\n",
+        "print(full_name)\n",
+        "print(major)\n",
+        "print(class)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_dYPs0MR8Lg9",
+        "outputId": "d65cad48-795d-4d55-e7d3-a6b30ed65a04"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] \"Cindy Nguyen\"\n",
+            "[1] \"FBM\"\n",
+            "[1] \"2028\"\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x <- 3\n",
+        "y <- -5\n",
+        "x + y"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "id": "eiKP2ZSU89P7",
+        "outputId": "4f8ac05d-39e3-4ffb-f3b4-bd88dba2cfcb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "-2"
+            ],
+            "text/markdown": "-2",
+            "text/latex": "-2",
+            "text/plain": [
+              "[1] -2"
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "m <- x + 3\n",
+        "m"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "id": "QOzXVRii9C8J",
+        "outputId": "7df37386-4d8b-4560-8e20-63e64e370c74"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "6"
+            ],
+            "text/markdown": "6",
+            "text/latex": "6",
+            "text/plain": [
+              "[1] 6"
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    }
+  ]
+}
